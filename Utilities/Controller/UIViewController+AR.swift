@@ -22,8 +22,11 @@ extension UIViewController {
                 completion(nil)
             }
         }
-
+        
+        let cancel = UIAlertAction(title: "Cancel", style: .cancel)
+        
         ac.addAction(submitAction)
+        ac.addAction(cancel)
 
         present(ac, animated: true)
     }
