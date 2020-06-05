@@ -23,7 +23,9 @@ extension UIViewController {
             }
         }
         
-        let cancel = UIAlertAction(title: "Cancel", style: .cancel)
+        let cancel = UIAlertAction(title: "Cancel", style: .cancel) { [unowned ac] _ in
+            completion(nil)
+        }
         
         ac.addAction(submitAction)
         ac.addAction(cancel)
