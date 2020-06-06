@@ -15,15 +15,24 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Bxs-ba-Ptb">
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="Bxs-ba-Ptb">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="862"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="133-fx-ab5">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="862"/>
+                                        <rect key="frame" x="139.5" y="0.0" width="135" height="426"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
                                         <state key="normal" title="Prompt for String"/>
                                         <connections>
                                             <action selector="testViewControllerPromptForStringWithId:" destination="BYZ-38-t0r" eventType="touchUpInside" id="CCb-d6-QDW"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="8vW-h1-zjr">
+                                        <rect key="frame" x="155.5" y="436" width="103" height="426"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
+                                        <state key="normal" title="Resize Image"/>
+                                        <connections>
+                                            <action selector="testViewControllerResizeImageWithId:" destination="BYZ-38-t0r" eventType="touchUpInside" id="emX-e2-Qoy"/>
                                         </connections>
                                     </button>
                                 </subviews>

@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		F912FD752486FCCC00C1BD4F /* UIViewController+AR.swift in Sources */ = {isa = PBXBuildFile; fileRef = F912FD742486FCCC00C1BD4F /* UIViewController+AR.swift */; };
+		F9508515248BC837001903D6 /* UIImage+AR.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9508514248BC837001903D6 /* UIImage+AR.swift */; };
+		F9508517248BCAA7001903D6 /* mila.jpg in Resources */ = {isa = PBXBuildFile; fileRef = F9508516248BCAA7001903D6 /* mila.jpg */; };
 		F9C98265247C1933003757E6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9C98264247C1933003757E6 /* AppDelegate.swift */; };
 		F9C98267247C1933003757E6 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9C98266247C1933003757E6 /* SceneDelegate.swift */; };
 		F9C98269247C1933003757E6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9C98268247C1933003757E6 /* ViewController.swift */; };
@@ -38,6 +40,8 @@
 
 /* Begin PBXFileReference section */
 		F912FD742486FCCC00C1BD4F /* UIViewController+AR.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIViewController+AR.swift"; path = "Utilities/Controller/UIViewController+AR.swift"; sourceTree = SOURCE_ROOT; };
+		F9508514248BC837001903D6 /* UIImage+AR.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+AR.swift"; sourceTree = "<group>"; };
+		F9508516248BCAA7001903D6 /* mila.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = mila.jpg; sourceTree = "<group>"; };
 		F9C98261247C1933003757E6 /* Utilities.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Utilities.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F9C98264247C1933003757E6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F9C98266247C1933003757E6 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -88,6 +92,15 @@
 			path = Controller;
 			sourceTree = "<group>";
 		};
+		F9508513248BC815001903D6 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				F9508516248BCAA7001903D6 /* mila.jpg */,
+				F9508514248BC837001903D6 /* UIImage+AR.swift */,
+			);
+			path = Images;
+			sourceTree = "<group>";
+		};
 		F9C98258247C1933003757E6 = {
 			isa = PBXGroup;
 			children = (
@@ -111,6 +124,7 @@
 		F9C98263247C1933003757E6 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				F9508513248BC815001903D6 /* Images */,
 				F912FD732486FC6F00C1BD4F /* Controller */,
 				F9C98294247C1976003757E6 /* FileSystem */,
 				F9C98264247C1933003757E6 /* AppDelegate.swift */,
@@ -254,6 +268,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F9508517248BCAA7001903D6 /* mila.jpg in Resources */,
 				F9C98271247C1933003757E6 /* LaunchScreen.storyboard in Resources */,
 				F9C9826E247C1933003757E6 /* Assets.xcassets in Resources */,
 				F9C9826C247C1933003757E6 /* Main.storyboard in Resources */,
@@ -281,6 +296,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F9508515248BC837001903D6 /* UIImage+AR.swift in Sources */,
 				F9C98296247C19BF003757E6 /* FileManager+AR.swift in Sources */,
 				F912FD752486FCCC00C1BD4F /* UIViewController+AR.swift in Sources */,
 				F9C98269247C1933003757E6 /* ViewController.swift in Sources */,
