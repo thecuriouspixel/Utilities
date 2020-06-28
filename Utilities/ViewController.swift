@@ -35,6 +35,22 @@ class ViewController: UIViewController {
             }
         }
     }
+    
+    @IBAction func testFullScreenImageViewer(id: Any) {
+        
+        if let image = UIImage(named: "mila.jpg") {
+            let fullScreenView = ARFullScreenImageViewer(withImage: image)
+            fullScreenView.backgroundColor = .darkGray
+            
+            let vc = UIViewController()
+            
+            vc.view.addSubview(fullScreenView)
+            
+            self.present(vc, animated: true) {
+                debugPrint("Presented full image view")
+            }
+        }
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()

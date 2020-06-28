@@ -16,10 +16,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="Bxs-ba-Ptb">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="862"/>
+                                <rect key="frame" x="0.0" y="17.5" width="414" height="861.5"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="133-fx-ab5">
-                                        <rect key="frame" x="139.5" y="0.0" width="135" height="426"/>
+                                        <rect key="frame" x="139.5" y="0.0" width="135" height="280.5"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
                                         <state key="normal" title="Prompt for String"/>
                                         <connections>
@@ -27,7 +27,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="8vW-h1-zjr">
-                                        <rect key="frame" x="155.5" y="436" width="103" height="426"/>
+                                        <rect key="frame" x="155.5" y="290.5" width="103" height="280.5"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
                                         <state key="normal" title="Resize Image"/>
@@ -35,15 +35,23 @@
                                             <action selector="testViewControllerResizeImageWithId:" destination="BYZ-38-t0r" eventType="touchUpInside" id="emX-e2-Qoy"/>
                                         </connections>
                                     </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="bLY-tk-44p">
+                                        <rect key="frame" x="109.5" y="581" width="195" height="280.5"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
+                                        <state key="normal" title="Full Screen Image Viewer"/>
+                                        <connections>
+                                            <action selector="testFullScreenImageViewerWithId:" destination="BYZ-38-t0r" eventType="touchUpInside" id="heU-4N-b7A"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                             </stackView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="Bxs-ba-Ptb" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="Lmj-6E-cpZ"/>
                             <constraint firstItem="Bxs-ba-Ptb" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="e3L-A2-0GZ"/>
+                            <constraint firstItem="Bxs-ba-Ptb" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="f2B-be-5Vi"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Bxs-ba-Ptb" secondAttribute="trailing" id="hfe-rz-SGp"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Bxs-ba-Ptb" secondAttribute="bottom" id="i9S-Az-2X1"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
