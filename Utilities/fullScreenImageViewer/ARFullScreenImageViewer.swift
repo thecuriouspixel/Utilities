@@ -61,8 +61,6 @@ class ARFullScreenImageViewer: UIScrollView {
                 self.imageView.alpha = 1.0
             }
             
-            self.imageView.backgroundColor = Constants.Color.DARK_GRAY
-            
         } else {
             self.imageView.image = image
         }
