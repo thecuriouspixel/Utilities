@@ -39,7 +39,7 @@ class ViewController: UIViewController {
     @IBAction func testFullScreenImageViewer(id: Any) {
         
         if let image = UIImage(named: "mila.jpg") {
-            let fullScreenView = ARFullScreenImageViewer(withImage: image)
+            let fullScreenView = ARFullScreenImageViewer()
             fullScreenView.backgroundColor = .darkGray
             
             let vc = UIViewController()
@@ -48,6 +48,7 @@ class ViewController: UIViewController {
             
             self.present(vc, animated: true) {
                 debugPrint("Presented full image view")
+                fullScreenView.add(image: image)
             }
         }
     }

@@ -12,7 +12,7 @@ class ARFullScreenImageViewer: UIScrollView {
     
     private var imageView: UIImageView!
     
-    init(withImage image: UIImage) {
+    init() {
         super.init(frame: CGRect(x: 0, y: 0, width: 10, height: 10))
         
         self.delegate = self
@@ -20,8 +20,10 @@ class ARFullScreenImageViewer: UIScrollView {
         // need to set otherwise it won't trigger zoom events
         self.maximumZoomScale = 2.0
         self.minimumZoomScale = 1.0
-        
-        self.setup(withImage: image)
+    }
+    
+    func add(image: UIImage) {
+        setup(withImage: image)
     }
     
     required init?(coder: NSCoder) {
@@ -32,7 +34,6 @@ class ARFullScreenImageViewer: UIScrollView {
         
         if let sv = self.superview {
             self.translatesAutoresizingMaskIntoConstraints = false;
-            
             //Constrain scroll view
             self.leadingAnchor.constraint(equalTo: sv.leadingAnchor, constant: 0).isActive = true;
             self.topAnchor.constraint(equalTo: sv.topAnchor, constant: 0).isActive = true;
@@ -42,17 +43,29 @@ class ARFullScreenImageViewer: UIScrollView {
     }
     
     func setup(withImage image: UIImage) {
-        self.imageView = UIImageView(image: image)
-        // self.imageView.backgroundColor = .orange
-        self.imageView.contentMode = .scaleAspectFit
         
-        self.addSubview(self.imageView)
-        
-        self.imageView.heightAnchor.constraint(equalTo: self.heightAnchor).isActive = true
-        self.imageView.widthAnchor.constraint(equalTo: self.widthAnchor).isActive = true
-        self.imageView.centerXAnchor.constraint(equalTo: self.centerXAnchor).isActive = true
-        self.imageView.centerYAnchor.constraint(equalTo: self.centerYAnchor).isActive = true
-        self.imageView.translatesAutoresizingMaskIntoConstraints = false
+        if self.imageView == nil {
+            self.imageView = UIImageView(image: image)
+            self.imageView.alpha = 0
+            self.imageView.contentMode = .scaleAspectFit
+            
+            self.addSubview(self.imageView)
+            
+            self.imageView.heightAnchor.constraint(equalTo: self.heightAnchor).isActive = true
+            self.imageView.widthAnchor.constraint(equalTo: self.widthAnchor).isActive = true
+            self.imageView.centerXAnchor.constraint(equalTo: self.centerXAnchor).isActive = true
+            self.imageView.centerYAnchor.constraint(equalTo: self.centerYAnchor).isActive = true
+            self.imageView.translatesAutoresizingMaskIntoConstraints = false
+            
+            UIView.animate(withDuration: 1.0) {
+                self.imageView.alpha = 1.0
+            }
+            
+            self.imageView.backgroundColor = Constants.Color.DARK_GRAY
+            
+        } else {
+            self.imageView.image = image
+        }
     }
     
     func calculateScale(imageToFit: UIImage) -> CGFloat {
