@@ -11,6 +11,7 @@ import UIKit
 class ARFullScreenImageViewer: UIScrollView {
     
     private var imageView: UIImageView!
+    private var gestureDoubleTap: UITapGestureRecognizer!
     
     init() {
         super.init(frame: CGRect(x: 0, y: 0, width: 10, height: 10))
@@ -44,6 +45,16 @@ class ARFullScreenImageViewer: UIScrollView {
     
     func setup(withImage image: UIImage) {
         
+        if self.gestureDoubleTap == nil {
+            
+            let gr = UITapGestureRecognizer(target: self, action: #selector(doubleTapped))
+            gr.numberOfTapsRequired = 2
+            
+            self.addGestureRecognizer(gr)
+            
+            self.gestureDoubleTap = gr
+        }
+        
         if self.imageView == nil {
             self.imageView = UIImageView(image: image)
             self.imageView.alpha = 0
@@ -64,29 +75,43 @@ class ARFullScreenImageViewer: UIScrollView {
         } else {
             self.imageView.image = image
         }
+        
+        self.calculateScale(imageToFit: image)
     }
     
-    func calculateScale(imageToFit: UIImage) -> CGFloat {
+    func calculateScale(imageToFit: UIImage) {
         
         // assume imageView same size as scroll view
         let widthScale = self.frame.size.width / imageToFit.size.width
         let heightScale = self.frame.size.height / imageToFit.size.height
-        return min( widthScale, heightScale)
+        
+        self.maximumZoomScale = 1.0/min( widthScale, heightScale)
     }
-
+    
+    @objc private func doubleTapped(_ sender: UITapGestureRecognizer) {
+        debugPrint("Double tapped")
+        
+        if self.zoomScale != self.maximumZoomScale {
+            
+            debugPrint("maximumZoomScale \(self.maximumZoomScale)")
+            let point = sender.location(in: self.imageView)
+            
+            let size = CGSize(width: self.imageView.frame.size.width / self.maximumZoomScale,
+                              height: self.imageView.frame.size.height / self.maximumZoomScale)
+            let origin = CGPoint(x: point.x - size.width / 2,
+                                 y: point.y - size.height / 2)
+            self.zoom(to:CGRect(origin: origin, size: size), animated: true)
+            print(CGRect(origin: origin, size: size))
+            
+        } else {
+            self.zoom(to: self.frame, animated: true)
+        }
+    }
 }
 
 extension ARFullScreenImageViewer: UIScrollViewDelegate {
     
     func viewForZooming(in scrollView: UIScrollView) -> UIView? {
         return self.imageView
-    }
-    
-    func scrollViewWillBeginZooming(_ scrollView: UIScrollView, with view: UIView?) {
-        // find a better place to do this? Should only have to do it once
-        if self.zoomScale == 1.0 {
-            let scale = self.calculateScale(imageToFit: self.imageView.image!)
-            self.maximumZoomScale = 1.0/scale
-        }
     }
 }
