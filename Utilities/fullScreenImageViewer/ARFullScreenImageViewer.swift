@@ -81,9 +81,13 @@ class ARFullScreenImageViewer: UIScrollView {
     
     func calculateScale(imageToFit: UIImage) {
         
+        debugPrint("Image size \(imageToFit.size)")
+        
+        let screenScale = UIScreen.main.scale
+        
         // assume imageView same size as scroll view
-        let widthScale = self.frame.size.width / imageToFit.size.width
-        let heightScale = self.frame.size.height / imageToFit.size.height
+        let widthScale = (self.frame.size.width * screenScale) / imageToFit.size.width
+        let heightScale = (self.frame.size.height * screenScale) / imageToFit.size.height
         
         self.maximumZoomScale = 1.0/min( widthScale, heightScale)
     }
