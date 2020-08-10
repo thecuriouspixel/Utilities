@@ -14,7 +14,7 @@ extension UIViewController {
         
         let ac = UIAlertController(title: title, message: nil, preferredStyle: .alert)
         ac.addTextField()
-
+        
         let submitAction = UIAlertAction(title: "Submit", style: .default) { [unowned ac] _ in
             if let answer = ac.textFields?[0] {
                 completion(answer.text)
@@ -22,13 +22,24 @@ extension UIViewController {
                 completion(nil)
             }
         }
+        submitAction.isEnabled = false
         
-        let cancel = UIAlertAction(title: "Cancel", style: .cancel) { [unowned ac] _ in
+        let cancel = UIAlertAction(title: "Cancel", style: .cancel) { _ in
             completion(nil)
         }
         
         ac.addAction(submitAction)
         ac.addAction(cancel)
+        
+        // leaving this hanging and never removing it
+        NotificationCenter.default.addObserver(forName: UITextField.textDidChangeNotification,
+                                               object:ac.textFields?[0],
+                                               queue: OperationQueue.main) { (notification) -> Void in
+                                                
+                                                if let textField = ac.textFields?[0] {
+                                                    submitAction.isEnabled = textField.text?.count ?? 0 > 0
+                                                }
+        }
 
         present(ac, animated: true)
     }
