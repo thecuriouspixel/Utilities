@@ -34,12 +34,7 @@ class ARFullScreenImageViewer: UIScrollView {
     override func didMoveToSuperview() {
         
         if let sv = self.superview {
-            self.translatesAutoresizingMaskIntoConstraints = false;
-            //Constrain scroll view
-            self.leadingAnchor.constraint(equalTo: sv.leadingAnchor, constant: 0).isActive = true;
-            self.topAnchor.constraint(equalTo: sv.topAnchor, constant: 0).isActive = true;
-            self.trailingAnchor.constraint(equalTo: sv.trailingAnchor, constant: 0).isActive = true;
-            self.bottomAnchor.constraint(equalTo: sv.bottomAnchor, constant: 0).isActive = true;
+            self.constrain(toParent: sv, atCorners: .all)
         }
     }
     

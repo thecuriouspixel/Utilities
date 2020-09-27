@@ -11,6 +11,8 @@
 		F912FD752486FCCC00C1BD4F /* UIViewController+AR.swift in Sources */ = {isa = PBXBuildFile; fileRef = F912FD742486FCCC00C1BD4F /* UIViewController+AR.swift */; };
 		F9508515248BC837001903D6 /* UIImage+AR.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9508514248BC837001903D6 /* UIImage+AR.swift */; };
 		F9508517248BCAA7001903D6 /* mila.jpg in Resources */ = {isa = PBXBuildFile; fileRef = F9508516248BCAA7001903D6 /* mila.jpg */; };
+		F958174D2520807800104228 /* View+AR.swift in Sources */ = {isa = PBXBuildFile; fileRef = F958174C2520807800104228 /* View+AR.swift */; };
+		F95817642520823700104228 /* UIView+AR.swift in Sources */ = {isa = PBXBuildFile; fileRef = F95817632520823700104228 /* UIView+AR.swift */; };
 		F9C98265247C1933003757E6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9C98264247C1933003757E6 /* AppDelegate.swift */; };
 		F9C98267247C1933003757E6 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9C98266247C1933003757E6 /* SceneDelegate.swift */; };
 		F9C98269247C1933003757E6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9C98268247C1933003757E6 /* ViewController.swift */; };
@@ -44,6 +46,8 @@
 		F912FD742486FCCC00C1BD4F /* UIViewController+AR.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIViewController+AR.swift"; path = "Utilities/Controller/UIViewController+AR.swift"; sourceTree = SOURCE_ROOT; };
 		F9508514248BC837001903D6 /* UIImage+AR.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+AR.swift"; sourceTree = "<group>"; };
 		F9508516248BCAA7001903D6 /* mila.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = mila.jpg; sourceTree = "<group>"; };
+		F958174C2520807800104228 /* View+AR.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "View+AR.swift"; sourceTree = "<group>"; };
+		F95817632520823700104228 /* UIView+AR.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+AR.swift"; sourceTree = "<group>"; };
 		F9C98261247C1933003757E6 /* Utilities.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Utilities.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F9C98264247C1933003757E6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F9C98266247C1933003757E6 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -111,6 +115,22 @@
 			path = Images;
 			sourceTree = "<group>";
 		};
+		F958174B2520805C00104228 /* VIew */ = {
+			isa = PBXGroup;
+			children = (
+				F958174C2520807800104228 /* View+AR.swift */,
+			);
+			path = VIew;
+			sourceTree = "<group>";
+		};
+		F95817622520822200104228 /* UIView */ = {
+			isa = PBXGroup;
+			children = (
+				F95817632520823700104228 /* UIView+AR.swift */,
+			);
+			path = UIView;
+			sourceTree = "<group>";
+		};
 		F9C98258247C1933003757E6 = {
 			isa = PBXGroup;
 			children = (
@@ -134,6 +154,8 @@
 		F9C98263247C1933003757E6 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				F95817622520822200104228 /* UIView */,
+				F958174B2520805C00104228 /* VIew */,
 				F909F66924A933F10041DEEC /* fullScreenImageViewer */,
 				F9508513248BC815001903D6 /* Images */,
 				F912FD732486FC6F00C1BD4F /* Controller */,
@@ -308,12 +330,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				F9508515248BC837001903D6 /* UIImage+AR.swift in Sources */,
+				F958174D2520807800104228 /* View+AR.swift in Sources */,
 				F9C98296247C19BF003757E6 /* FileManager+AR.swift in Sources */,
 				F912FD752486FCCC00C1BD4F /* UIViewController+AR.swift in Sources */,
 				F9C98269247C1933003757E6 /* ViewController.swift in Sources */,
 				F909F66B24A935B30041DEEC /* ARFullScreenImageViewer.swift in Sources */,
 				F9C98265247C1933003757E6 /* AppDelegate.swift in Sources */,
 				F9C98267247C1933003757E6 /* SceneDelegate.swift in Sources */,
+				F95817642520823700104228 /* UIView+AR.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
