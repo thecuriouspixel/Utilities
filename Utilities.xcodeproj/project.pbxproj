@@ -22,6 +22,7 @@
 		F9C9827C247C1934003757E6 /* UtilitiesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9C9827B247C1934003757E6 /* UtilitiesTests.swift */; };
 		F9C98287247C1934003757E6 /* UtilitiesUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9C98286247C1934003757E6 /* UtilitiesUITests.swift */; };
 		F9C98296247C19BF003757E6 /* FileManager+AR.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9C98295247C19BF003757E6 /* FileManager+AR.swift */; };
+		F9F660682529B3BF00890349 /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9F660672529B3BF00890349 /* GradientView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,6 +64,7 @@
 		F9C98286247C1934003757E6 /* UtilitiesUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UtilitiesUITests.swift; sourceTree = "<group>"; };
 		F9C98288247C1934003757E6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F9C98295247C19BF003757E6 /* FileManager+AR.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "FileManager+AR.swift"; sourceTree = "<group>"; };
+		F9F660672529B3BF00890349 /* GradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -127,6 +129,7 @@
 			isa = PBXGroup;
 			children = (
 				F95817632520823700104228 /* UIView+AR.swift */,
+				F9F660672529B3BF00890349 /* GradientView.swift */,
 			);
 			path = UIView;
 			sourceTree = "<group>";
@@ -331,6 +334,7 @@
 			files = (
 				F9508515248BC837001903D6 /* UIImage+AR.swift in Sources */,
 				F958174D2520807800104228 /* View+AR.swift in Sources */,
+				F9F660682529B3BF00890349 /* GradientView.swift in Sources */,
 				F9C98296247C19BF003757E6 /* FileManager+AR.swift in Sources */,
 				F912FD752486FCCC00C1BD4F /* UIViewController+AR.swift in Sources */,
 				F9C98269247C1933003757E6 /* ViewController.swift in Sources */,

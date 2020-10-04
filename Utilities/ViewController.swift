@@ -52,6 +52,28 @@ class ViewController: UIViewController {
             }
         }
     }
+    
+    @IBAction func testHorizontalGradientOverlay(id: Any) {
+        
+        if let image = UIImage(named: "mila.jpg") {
+            let imageview = UIImageView(image: image)
+            imageview.contentMode = .scaleAspectFit
+            
+            let gradienView = GradientView(frame: CGRect.zero, alignment: .vertical)
+            
+            let vc = UIViewController()
+            
+            vc.view.addSubview(imageview)
+            imageview.constrain(toParent: vc.view, atCorners: .all)
+            
+            vc.view.addSubview(gradienView)
+            gradienView.constrain(toParent: vc.view, atCorners: .all)
+            
+            self.present(vc, animated: true) {
+                debugPrint("Presented horizontal gradient test")
+            }
+        }
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
