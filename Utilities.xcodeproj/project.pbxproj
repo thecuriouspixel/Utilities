@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		F909F66B24A935B30041DEEC /* ARFullScreenImageViewer.swift in Sources */ = {isa = PBXBuildFile; fileRef = F909F66A24A935B30041DEEC /* ARFullScreenImageViewer.swift */; };
 		F912FD752486FCCC00C1BD4F /* UIViewController+AR.swift in Sources */ = {isa = PBXBuildFile; fileRef = F912FD742486FCCC00C1BD4F /* UIViewController+AR.swift */; };
+		F947EE5025433DEE0047D025 /* Array+AR.swift in Sources */ = {isa = PBXBuildFile; fileRef = F947EE4F25433DEE0047D025 /* Array+AR.swift */; };
 		F9508515248BC837001903D6 /* UIImage+AR.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9508514248BC837001903D6 /* UIImage+AR.swift */; };
 		F9508517248BCAA7001903D6 /* mila.jpg in Resources */ = {isa = PBXBuildFile; fileRef = F9508516248BCAA7001903D6 /* mila.jpg */; };
 		F958174D2520807800104228 /* View+AR.swift in Sources */ = {isa = PBXBuildFile; fileRef = F958174C2520807800104228 /* View+AR.swift */; };
@@ -46,6 +47,7 @@
 /* Begin PBXFileReference section */
 		F909F66A24A935B30041DEEC /* ARFullScreenImageViewer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARFullScreenImageViewer.swift; sourceTree = "<group>"; };
 		F912FD742486FCCC00C1BD4F /* UIViewController+AR.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIViewController+AR.swift"; path = "Utilities/Controller/UIViewController+AR.swift"; sourceTree = SOURCE_ROOT; };
+		F947EE4F25433DEE0047D025 /* Array+AR.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+AR.swift"; sourceTree = "<group>"; };
 		F9508514248BC837001903D6 /* UIImage+AR.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+AR.swift"; sourceTree = "<group>"; };
 		F9508516248BCAA7001903D6 /* mila.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = mila.jpg; sourceTree = "<group>"; };
 		F958174C2520807800104228 /* View+AR.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "View+AR.swift"; sourceTree = "<group>"; };
@@ -110,6 +112,14 @@
 			path = Controller;
 			sourceTree = "<group>";
 		};
+		F947EE4E25433DDC0047D025 /* Arrays */ = {
+			isa = PBXGroup;
+			children = (
+				F947EE4F25433DEE0047D025 /* Array+AR.swift */,
+			);
+			path = Arrays;
+			sourceTree = "<group>";
+		};
 		F9508513248BC815001903D6 /* Images */ = {
 			isa = PBXGroup;
 			children = (
@@ -159,6 +169,7 @@
 		F9C98263247C1933003757E6 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				F947EE4E25433DDC0047D025 /* Arrays */,
 				F9F66071252A589D00890349 /* UILabel */,
 				F95817622520822200104228 /* UIView */,
 				F958174B2520805C00104228 /* VIew */,
@@ -349,6 +360,7 @@
 				F9C98296247C19BF003757E6 /* FileManager+AR.swift in Sources */,
 				F912FD752486FCCC00C1BD4F /* UIViewController+AR.swift in Sources */,
 				F9C98269247C1933003757E6 /* ViewController.swift in Sources */,
+				F947EE5025433DEE0047D025 /* Array+AR.swift in Sources */,
 				F909F66B24A935B30041DEEC /* ARFullScreenImageViewer.swift in Sources */,
 				F9C98265247C1933003757E6 /* AppDelegate.swift in Sources */,
 				F9C98267247C1933003757E6 /* SceneDelegate.swift in Sources */,

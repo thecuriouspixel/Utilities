@@ -77,9 +77,34 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        
+        // Test some utils that don't need a button press
+        testIterator()
     }
 
+    
+    private func testIterator() {
+        
+        let array = [ 1, 2, 3, 4]
+        
+        let iterator = array.makeInfiniteLoopIterator()
+        
+        debugPrint("Iterator 10 items using next")
+        var index = 0
+        while index < 10 {
+            if let next = iterator.next() {
+                debugPrint(next)
+            }
+            index += 1
+        }
+        
+        // prep 10 items ahead of time
+        debugPrint("Iterator 10 items prepared")
+        let tenItems = iterator.prefix(10)
+        for item in tenItems {
+            debugPrint(item)
+        }
+    }
 
 }
 
