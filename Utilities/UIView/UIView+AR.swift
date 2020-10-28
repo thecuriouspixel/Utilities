@@ -11,7 +11,14 @@ import UIKit
 
 extension UIView {
     
+    enum Alignment {
+        case center
+        case left
+        case right
+    }
+    
     func round(corners: UIRectCorner, radius: CGFloat) {
+        
         let path = UIBezierPath(roundedRect: bounds, byRoundingCorners: corners, cornerRadii: CGSize(width: radius, height: radius))
         let mask = CAShapeLayer()
         mask.path = path.cgPath
@@ -44,5 +51,42 @@ extension UIView {
             }
         }
         translatesAutoresizingMaskIntoConstraints = false
+    }
+    
+    static func generate(ofSize size: CGSize, withImage image: UIImage, imageScale: CGFloat, alignment: Alignment, backgroundColor: UIColor) -> UIView {
+        
+        let baseView = UIView(frame: CGRect(x: 0, y: 0, width: size.width, height: size.height))
+        baseView.backgroundColor = backgroundColor
+        
+        let imageView = UIImageView(image: image)
+        imageView.contentMode = .scaleAspectFit
+        baseView.addSubview(imageView)
+        
+        imageView.translatesAutoresizingMaskIntoConstraints = false
+        switch alignment {
+            case .left:
+                imageView.centerYAnchor.constraint(equalTo: baseView.centerYAnchor).isActive = true
+                imageView.leadingAnchor.constraint(equalTo: baseView.leadingAnchor).isActive = true
+            case .right:
+                imageView.centerYAnchor.constraint(equalTo: baseView.centerYAnchor).isActive = true
+                imageView.trailingAnchor.constraint(equalTo: baseView.trailingAnchor).isActive = true
+            default:
+                imageView.centerYAnchor.constraint(equalTo: baseView.centerYAnchor).isActive = true
+                imageView.centerXAnchor.constraint(equalTo: baseView.centerXAnchor).isActive = true
+        }
+        
+        imageView.widthAnchor.constraint(equalTo: baseView.widthAnchor, multiplier: imageScale).isActive = true
+        imageView.heightAnchor.constraint(equalTo: baseView.heightAnchor, multiplier: imageScale).isActive = true
+        
+        return baseView
+    }
+    
+    func toImage() -> UIImage {
+        
+        let renderer = UIGraphicsImageRenderer(size: self.bounds.size)
+        let image = renderer.image { ctx in
+            self.drawHierarchy(in: self.bounds, afterScreenUpdates: true)
+        }
+        return image
     }
 }
