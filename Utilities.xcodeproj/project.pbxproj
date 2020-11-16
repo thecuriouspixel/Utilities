@@ -14,6 +14,7 @@
 		F9508517248BCAA7001903D6 /* mila.jpg in Resources */ = {isa = PBXBuildFile; fileRef = F9508516248BCAA7001903D6 /* mila.jpg */; };
 		F958174D2520807800104228 /* View+AR.swift in Sources */ = {isa = PBXBuildFile; fileRef = F958174C2520807800104228 /* View+AR.swift */; };
 		F95817642520823700104228 /* UIView+AR.swift in Sources */ = {isa = PBXBuildFile; fileRef = F95817632520823700104228 /* UIView+AR.swift */; };
+		F9A2B12B255BDD8D00782D8A /* ARTextCapture.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9A2B12A255BDD8D00782D8A /* ARTextCapture.swift */; };
 		F9C98265247C1933003757E6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9C98264247C1933003757E6 /* AppDelegate.swift */; };
 		F9C98267247C1933003757E6 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9C98266247C1933003757E6 /* SceneDelegate.swift */; };
 		F9C98269247C1933003757E6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9C98268247C1933003757E6 /* ViewController.swift */; };
@@ -52,6 +53,7 @@
 		F9508516248BCAA7001903D6 /* mila.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = mila.jpg; sourceTree = "<group>"; };
 		F958174C2520807800104228 /* View+AR.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "View+AR.swift"; sourceTree = "<group>"; };
 		F95817632520823700104228 /* UIView+AR.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+AR.swift"; sourceTree = "<group>"; };
+		F9A2B12A255BDD8D00782D8A /* ARTextCapture.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARTextCapture.swift; sourceTree = "<group>"; };
 		F9C98261247C1933003757E6 /* Utilities.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Utilities.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F9C98264247C1933003757E6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F9C98266247C1933003757E6 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -146,6 +148,14 @@
 			path = UIView;
 			sourceTree = "<group>";
 		};
+		F9A2B129255BDCB600782D8A /* Text Capture */ = {
+			isa = PBXGroup;
+			children = (
+				F9A2B12A255BDD8D00782D8A /* ARTextCapture.swift */,
+			);
+			path = "Text Capture";
+			sourceTree = "<group>";
+		};
 		F9C98258247C1933003757E6 = {
 			isa = PBXGroup;
 			children = (
@@ -169,6 +179,7 @@
 		F9C98263247C1933003757E6 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				F9A2B129255BDCB600782D8A /* Text Capture */,
 				F947EE4E25433DDC0047D025 /* Arrays */,
 				F9F66071252A589D00890349 /* UILabel */,
 				F95817622520822200104228 /* UIView */,
@@ -358,6 +369,7 @@
 				F958174D2520807800104228 /* View+AR.swift in Sources */,
 				F9F660682529B3BF00890349 /* GradientView.swift in Sources */,
 				F9C98296247C19BF003757E6 /* FileManager+AR.swift in Sources */,
+				F9A2B12B255BDD8D00782D8A /* ARTextCapture.swift in Sources */,
 				F912FD752486FCCC00C1BD4F /* UIViewController+AR.swift in Sources */,
 				F9C98269247C1933003757E6 /* ViewController.swift in Sources */,
 				F947EE5025433DEE0047D025 /* Array+AR.swift in Sources */,

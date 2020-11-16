@@ -74,6 +74,22 @@ class ViewController: UIViewController {
             }
         }
     }
+    
+    @IBAction func testTextCapture(id: Any) {
+        let vc = UIViewController()
+        
+        let imageView = UIImageView(image: UIImage(named: "mila.jpg"))
+        imageView.contentMode = .scaleAspectFill
+        
+        vc.view.addSubview(imageView)
+        imageView.constrain(toParent: vc.view, atCorners: .all)
+        
+        self.present(vc, animated: true) {
+            debugPrint("Presented text capture test - adding text capture")
+            let textRequest = ARTextCapture()
+            textRequest.requestText(parentVC: vc)
+        }
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
