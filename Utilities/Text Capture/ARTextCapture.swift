@@ -8,6 +8,10 @@
 
 import UIKit
 
+/*
+ * Textfield background is kept above the keyboard via constant change. Other elements are aligned to it.
+ */
+
 class ARTextCapture: UIViewController {
     
     // init with a delegate - or just pass a callback?
@@ -17,19 +21,35 @@ class ARTextCapture: UIViewController {
         parentVC.addChild(self)
         parentVC.view.addSubview(self.view)
         self.didMove(toParent: parentVC)
-        
-        setup()
     }
 
     override func viewDidLoad() {
         super.viewDidLoad()
         debugPrint("ARTextCapture loaded")
-
+        
+        setup()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShowOrHide(notification:)), name: UIResponder.keyboardWillShowNotification, object: nil)
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        
+        NotificationCenter.default.removeObserver(self)
+    }
+    
+    override func viewDidLayoutSubviews() {
+        updateLayout()
     }
     
     func setup() {
         addVisualEffectView()
         addTextField()
+        updateLayout()
     }
     
     func addTextField() {
@@ -39,6 +59,8 @@ class ARTextCapture: UIViewController {
         let textField = UITextField()
         textField.textAlignment = .center
         textField.textColor = .lightText
+        textField.delegate = self
+        
         view.addSubview(textField)
         
         let lightPlaceHolderText = NSAttributedString(string: "Enter a new name",
@@ -51,8 +73,9 @@ class ARTextCapture: UIViewController {
         textField.centerXAnchor.constraint(equalTo: bknd.centerXAnchor).isActive = true
         textField.centerYAnchor.constraint(equalTo: bknd.centerYAnchor).isActive = true
         
-        textField.becomeFirstResponder()
+        fieldBackground = bknd
         
+        textField.becomeFirstResponder()
     }
     
     func addVisualEffectView() {
@@ -65,7 +88,7 @@ class ARTextCapture: UIViewController {
         
         let widthMultiplier: CGFloat = 0.8
         
-        let textBnkd = UIView(frame: CGRect(x: 0, y: 0, width: view.bounds.width * widthMultiplier, height: 60))
+        let textBnkd = UIView()
         textBnkd.backgroundColor = .black
         view.addSubview(textBnkd)
         
@@ -73,21 +96,51 @@ class ARTextCapture: UIViewController {
         textBnkd.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: widthMultiplier).isActive = true
         textBnkd.heightAnchor.constraint(equalToConstant: 60).isActive = true
         textBnkd.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-        textBnkd.centerYAnchor.constraint(equalTo: view.centerYAnchor, constant: -60).isActive = true
         
-        textBnkd.round(corners: .allCorners, radius: 12)
+        let constraint = textBnkd.centerYAnchor.constraint(equalTo: view.centerYAnchor, constant: 0)
+        constraint.isActive = true
+        self.textFieldConstraint = constraint
         
         return textBnkd
     }
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    private func updateLayout() {
+        fieldBackground?.round(corners: .allCorners, radius: 12)
     }
-    */
+    
+    @objc private func keyboardWillShowOrHide(notification: NSNotification) {
+            // Get required info out of the notification
+            if let userInfo = notification.userInfo, let endValue = userInfo[UIResponder.keyboardFrameEndUserInfoKey], let durationValue = userInfo[UIResponder.keyboardAnimationDurationUserInfoKey], let curveValue = userInfo[UIResponder.keyboardAnimationCurveUserInfoKey] {
+                
+                if let fieldBackground = fieldBackground {
+                    
+                    let endRect = view.convert((endValue as AnyObject).cgRectValue, from: view)
+                    let keyboardOverlap = (fieldBackground.frame.maxY - endRect.origin.y) + 10 // 10 is offset
+                    
+                    if keyboardOverlap > 0 {
+                        
+                        let duration = (durationValue as AnyObject).doubleValue
+                        let options = UIView.AnimationOptions(rawValue: UInt((curveValue as AnyObject).integerValue << 16))
+                        
+                        UIView.animate(withDuration: duration!, delay: 0, options: options, animations: {
+                            self.textFieldConstraint?.constant = -keyboardOverlap
+                            self.view.layoutIfNeeded()
+                        }, completion: nil)
+                    }
+                }
+            }
+        }
+    
+    private weak var fieldBackground: UIView?
+    private weak var textFieldConstraint: NSLayoutConstraint?
 
+}
+
+extension ARTextCapture: UITextFieldDelegate {
+
+    // new name captured at this point
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return false
+    }
 }
