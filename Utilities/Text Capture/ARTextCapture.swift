@@ -14,10 +14,9 @@ import UIKit
 
 class ARTextCapture: UIViewController {
     
-    // init with a delegate - or just pass a callback?
+    static let fieldOffset: CGFloat = -100
     
     func requestText(parentVC: UIViewController) {
-        debugPrint("Requesting text")
         parentVC.addChild(self)
         parentVC.view.addSubview(self.view)
         self.didMove(toParent: parentVC)
@@ -25,8 +24,6 @@ class ARTextCapture: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        debugPrint("ARTextCapture loaded")
-        
         setup()
     }
     
@@ -42,6 +39,10 @@ class ARTextCapture: UIViewController {
         NotificationCenter.default.removeObserver(self)
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        textField.becomeFirstResponder()
+    }
+    
     override func viewDidLayoutSubviews() {
         updateLayout()
     }
@@ -49,7 +50,6 @@ class ARTextCapture: UIViewController {
     func setup() {
         addVisualEffectView()
         addTextField()
-        updateLayout()
     }
     
     func addTextField() {
@@ -74,8 +74,7 @@ class ARTextCapture: UIViewController {
         textField.centerYAnchor.constraint(equalTo: bknd.centerYAnchor).isActive = true
         
         fieldBackground = bknd
-        
-        textField.becomeFirstResponder()
+        self.textField = textField
     }
     
     func addVisualEffectView() {
@@ -97,7 +96,7 @@ class ARTextCapture: UIViewController {
         textBnkd.heightAnchor.constraint(equalToConstant: 60).isActive = true
         textBnkd.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
         
-        let constraint = textBnkd.centerYAnchor.constraint(equalTo: view.centerYAnchor, constant: 0)
+        let constraint = textBnkd.centerYAnchor.constraint(equalTo: view.centerYAnchor, constant: Self.fieldOffset)
         constraint.isActive = true
         self.textFieldConstraint = constraint
         
@@ -117,13 +116,14 @@ class ARTextCapture: UIViewController {
                     let endRect = view.convert((endValue as AnyObject).cgRectValue, from: view)
                     let keyboardOverlap = (fieldBackground.frame.maxY - endRect.origin.y) + 10 // 10 is offset
                     
-                    if keyboardOverlap > 0 {
+                    if endRect.height > view.frame.height/3 { // make sure we don't get random small keyboard events
+                       
+                        self.textFieldConstraint?.constant = (keyboardOverlap > 0) ? -keyboardOverlap + Self.fieldOffset : Self.fieldOffset
                         
                         let duration = (durationValue as AnyObject).doubleValue
                         let options = UIView.AnimationOptions(rawValue: UInt((curveValue as AnyObject).integerValue << 16))
                         
                         UIView.animate(withDuration: duration!, delay: 0, options: options, animations: {
-                            self.textFieldConstraint?.constant = -keyboardOverlap
                             self.view.layoutIfNeeded()
                         }, completion: nil)
                     }
@@ -131,8 +131,9 @@ class ARTextCapture: UIViewController {
             }
         }
     
-    private weak var fieldBackground: UIView?
-    private weak var textFieldConstraint: NSLayoutConstraint?
+    private weak var fieldBackground: UIView!
+    private weak var textFieldConstraint: NSLayoutConstraint!
+    private weak var textField: UITextField!
 
 }
 
