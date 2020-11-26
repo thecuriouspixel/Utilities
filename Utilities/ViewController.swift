@@ -76,6 +76,9 @@ class ViewController: UIViewController {
     }
     
     @IBAction func testTextCapture(id: Any) {
+        
+        let tintColor = UIColor(displayP3Red: 255/255, green: 233/255, blue: 145/255, alpha: 1.0)
+        
         let vc = UIViewController()
         
         let imageView = UIImageView(image: UIImage(named: "mila.jpg"))
@@ -86,8 +89,10 @@ class ViewController: UIViewController {
         
         self.present(vc, animated: true) {
             debugPrint("Presented text capture test - adding text capture")
-            let textRequest = ARTextCapture()
-            textRequest.requestText(parentVC: vc)
+            DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
+                let textRequest = ARTextCapture()
+                textRequest.requestText(parentVC: vc, titleString: "Rename", placeholderString: "Enter a new name", currentText: "Andres", tintColor: tintColor)
+            }
         }
     }
 

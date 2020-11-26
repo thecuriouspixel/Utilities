@@ -11,16 +11,15 @@ import UIKit
 /*
  * Textfield background is kept above the keyboard via constant change. Other elements are aligned to it.
  */
-
 class ARTextCapture: UIViewController {
     
     static let fieldOffset: CGFloat = -100
     
-    func requestText(parentVC: UIViewController, withTintColor tintColor: UIColor = .white) {
-        parentVC.addChild(self)
-        parentVC.view.addSubview(self.view)
-        self.didMove(toParent: parentVC)
-        setup(tintColor: tintColor)
+    func requestText(parentVC: UIViewController, titleString: String, placeholderString: String, currentText: String = "", tintColor: UIColor = .white) {
+        
+        addAsChildViewController(toParent: parentVC)
+        
+        setup(titleString: titleString, placeholderString: placeholderString, currentText: currentText, tintColor: tintColor)
         
         UIView.animate(withDuration: 0.4) {
             self.fieldBackground.alpha = 1
@@ -68,6 +67,8 @@ extension ARTextCapture: UITextFieldDelegate {
     // new name captured at this point
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
+        // call back here
+        removeAsChildViewController()
         return false
     }
 }
@@ -75,31 +76,33 @@ extension ARTextCapture: UITextFieldDelegate {
 // MARK: - Private
 extension ARTextCapture {
     
-    private func setup(tintColor: UIColor) {
+    private func setup(titleString: String, placeholderString: String, currentText: String, tintColor: UIColor) {
         addVisualEffectView()
-        addTextField(tintColor: tintColor)
-        addTitle(tintColor: tintColor)
+        addTextField(placeholderString: placeholderString, currentText: currentText, tintColor: tintColor)
+        addTitle(titleString: titleString, tintColor: tintColor)
         
         fieldBackground.alpha = 0
         textField.alpha = 0
         label.alpha = 0
     }
     
-    private func addTextField(tintColor: UIColor) {
+    private func addTextField(placeholderString: String, currentText: String, tintColor: UIColor) {
         
         let bknd = addTextFieldBackground()
         
         let textField = UITextField()
+        textField.text = currentText
         textField.textAlignment = .center
         textField.textColor = .white
         textField.returnKeyType = .done
         textField.tintColor = tintColor
+        textField.clearButtonMode = .always
         
         textField.delegate = self
         
         view.addSubview(textField)
         
-        let lightPlaceHolderText = NSAttributedString(string: "Enter a new name",
+        let lightPlaceHolderText = NSAttributedString(string: placeholderString,
                                                       attributes: [NSAttributedString.Key.foregroundColor: UIColor.gray])
         textField.attributedPlaceholder = lightPlaceHolderText
         
@@ -139,10 +142,10 @@ extension ARTextCapture {
         return textBnkd
     }
     
-    private func addTitle(tintColor: UIColor) {
+    private func addTitle(titleString: String, tintColor: UIColor) {
         
         let label = UILabel()
-        label.text = "Rename"
+        label.text = titleString
         label.font = UIFont.systemFont(ofSize: 30, weight: .thin)
         label.textColor = tintColor
         label.setCharacterSpacing(2)
