@@ -91,7 +91,12 @@ class ViewController: UIViewController {
             debugPrint("Presented text capture test - adding text capture")
             DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
                 let textRequest = ARTextCapture()
-                textRequest.requestText(parentVC: vc, titleString: "Rename", placeholderString: "Enter a new name", currentText: "Andres", tintColor: tintColor)
+                textRequest.requestText(parentVC: vc,
+                                        delegate: self,
+                                        titleString: "Rename",
+                                        placeholderString: "Enter a new name",
+                                        currentText: "Andres",
+                                        tintColor: tintColor)
             }
         }
     }
@@ -127,5 +132,12 @@ class ViewController: UIViewController {
         }
     }
 
+}
+
+extension ViewController: ARTextCaptureDelegate {
+    
+    func textCaptured(newString: String, oldString: String) {
+        debugPrint("Text Captured with \(newString) also returning old string \(oldString)")
+    }
 }
 

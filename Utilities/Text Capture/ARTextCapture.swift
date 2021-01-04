@@ -15,9 +15,17 @@ class ARTextCapture: UIViewController {
     
     static let fieldOffset: CGFloat = -100
     
-    func requestText(parentVC: UIViewController, titleString: String, placeholderString: String, currentText: String = "", tintColor: UIColor = .white) {
+    func requestText(parentVC: UIViewController,
+                     delegate: ARTextCaptureDelegate,
+                     titleString: String,
+                     placeholderString: String,
+                     currentText: String = "",
+                     tintColor: UIColor = .white) {
         
         addAsChildViewController(toParent: parentVC)
+        
+        self.delegate = delegate
+        self.currentText = currentText
         
         setup(titleString: titleString, placeholderString: placeholderString, currentText: currentText, tintColor: tintColor)
         
@@ -59,6 +67,8 @@ class ARTextCapture: UIViewController {
     private weak var textFieldConstraint: NSLayoutConstraint!
     private weak var textField: UITextField!
     private weak var label: UILabel!
+    private weak var delegate: ARTextCaptureDelegate?
+    private var currentText: String = ""
     
 }
 
@@ -67,8 +77,11 @@ extension ARTextCapture: UITextFieldDelegate {
     // new name captured at this point
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
-        // call back here
+        
         removeAsChildViewController()
+        
+        self.delegate?.textCaptured(newString: textField.text ?? "", oldString: self.currentText)
+        
         return false
     }
 }
@@ -77,6 +90,7 @@ extension ARTextCapture: UITextFieldDelegate {
 extension ARTextCapture {
     
     private func setup(titleString: String, placeholderString: String, currentText: String, tintColor: UIColor) {
+        
         addVisualEffectView()
         addTextField(placeholderString: placeholderString, currentText: currentText, tintColor: tintColor)
         addTitle(titleString: titleString, tintColor: tintColor)
@@ -96,7 +110,7 @@ extension ARTextCapture {
         textField.textColor = .white
         textField.returnKeyType = .done
         textField.tintColor = tintColor
-        textField.clearButtonMode = .always
+        addClearButton(toTextField: textField, tintColor: tintColor)
         
         textField.delegate = self
         
@@ -163,6 +177,21 @@ extension ARTextCapture {
         self.label = label
     }
     
+    private func addClearButton(toTextField textField: UITextField, tintColor: UIColor = .white) {
+        
+        let config = UIImage.SymbolConfiguration(pointSize: 16)
+        let buttonImage = UIImage.sfImage(named: "xmark.circle", config: config, withTintColor: tintColor)
+        
+        let clearButton = UIButton(type: .custom)
+        clearButton.setImage(buttonImage, for: .normal)
+        clearButton.frame = CGRect(x: 0, y: 0, width: 40, height: 40)
+        clearButton.contentMode = .scaleAspectFit
+        clearButton.addTarget(self, action: #selector(clear(sender:) ), for: .touchUpInside)
+        textField.rightView = clearButton
+        textField.rightViewMode = .always
+        
+    }
+    
     private func updateLayout() {
         fieldBackground?.round(corners: .allCorners, radius: 12)
     }
@@ -189,5 +218,10 @@ extension ARTextCapture {
                 }
             }
         }
+    }
+    
+    @objc func clear(sender : AnyObject) {
+        self.textField.text = ""
+        self.textField.sendActions(for: .editingChanged)
     }
 }
