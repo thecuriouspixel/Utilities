@@ -134,6 +134,9 @@ extension ARTextCapture {
         let newView = UIVisualEffectView(effect: UIBlurEffect(style: .dark))
         view.addSubview(newView)
         newView.constrain(toParent: self.view, atCorners: .all)
+        
+        let tapRecognizer = UITapGestureRecognizer(target: self, action: #selector(cancel(sender:)))
+        newView.addGestureRecognizer(tapRecognizer)
     }
     
     private func addTextFieldBackground() -> UIView {
@@ -221,7 +224,14 @@ extension ARTextCapture {
     }
     
     @objc func clear(sender : AnyObject) {
-        self.textField.text = ""
-        self.textField.sendActions(for: .editingChanged)
+        textField.text = ""
+        textField.sendActions(for: .editingChanged)
+    }
+    
+    @objc func cancel(sender : AnyObject) {
+        textField.resignFirstResponder()
+        removeAsChildViewController()
+        
+        self.delegate?.textCaptureCancelled()
     }
 }

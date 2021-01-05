@@ -11,4 +11,5 @@ import Foundation
 protocol ARTextCaptureDelegate: class {
     
     func textCaptured(newString: String, oldString: String)
+    func textCaptureCancelled()
 }

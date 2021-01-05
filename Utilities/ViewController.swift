@@ -139,5 +139,9 @@ extension ViewController: ARTextCaptureDelegate {
     func textCaptured(newString: String, oldString: String) {
         debugPrint("Text Captured with \(newString) also returning old string \(oldString)")
     }
+    
+    func textCaptureCancelled() {
+        debugPrint("Capture cancelled")
+    }
 }
 
