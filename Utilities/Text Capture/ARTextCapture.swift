@@ -19,13 +19,13 @@ class ARTextCapture: UIViewController {
                      delegate: ARTextCaptureDelegate,
                      titleString: String,
                      placeholderString: String,
-                     currentText: String = "",
+                     currentText: String?,
                      tintColor: UIColor = .white) {
         
         addAsChildViewController(toParent: parentVC)
         
         self.delegate = delegate
-        self.currentText = currentText
+        self.currentText = currentText ?? ""
         
         setup(titleString: titleString, placeholderString: placeholderString, currentText: currentText, tintColor: tintColor)
         
@@ -89,7 +89,7 @@ extension ARTextCapture: UITextFieldDelegate {
 // MARK: - Private
 extension ARTextCapture {
     
-    private func setup(titleString: String, placeholderString: String, currentText: String, tintColor: UIColor) {
+    private func setup(titleString: String, placeholderString: String, currentText: String?, tintColor: UIColor) {
         
         addVisualEffectView()
         addTextField(placeholderString: placeholderString, currentText: currentText, tintColor: tintColor)
@@ -100,7 +100,7 @@ extension ARTextCapture {
         label.alpha = 0
     }
     
-    private func addTextField(placeholderString: String, currentText: String, tintColor: UIColor) {
+    private func addTextField(placeholderString: String, currentText: String?, tintColor: UIColor) {
         
         let bknd = addTextFieldBackground()
         
