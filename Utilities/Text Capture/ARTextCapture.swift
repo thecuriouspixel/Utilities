@@ -35,6 +35,7 @@ class ARTextCapture: UIViewController {
         }completion: { (success) in
             UIView.animate(withDuration: 0.4) {
                 self.label.alpha = 1
+                self.textField.becomeFirstResponder() // not only does it look good, it's a nice way to "wait some time"
             }
         }
     }
@@ -53,10 +54,6 @@ class ARTextCapture: UIViewController {
         super.viewWillDisappear(animated)
         
         NotificationCenter.default.removeObserver(self)
-    }
-    
-    override func viewDidAppear(_ animated: Bool) {
-        textField.becomeFirstResponder()
     }
     
     override func viewDidLayoutSubviews() {
