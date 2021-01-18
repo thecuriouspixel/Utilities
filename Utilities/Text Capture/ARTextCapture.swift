@@ -16,16 +16,16 @@ class ARTextCapture: UIViewController {
     static let fieldOffset: CGFloat = -100
     
     func requestText(parentVC: UIViewController,
-                     delegate: ARTextCaptureDelegate,
                      titleString: String,
                      placeholderString: String,
+                     completion: @escaping ((String?)-> Void),
                      currentText: String?,
                      tintColor: UIColor = .white) {
         
         addAsChildViewController(toParent: parentVC)
         
-        self.delegate = delegate
         self.currentText = currentText ?? ""
+        self.completion = completion
         
         setup(titleString: titleString, placeholderString: placeholderString, currentText: currentText, tintColor: tintColor)
         
@@ -53,6 +53,8 @@ class ARTextCapture: UIViewController {
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         
+        completion = nil
+        
         NotificationCenter.default.removeObserver(self)
     }
     
@@ -64,9 +66,8 @@ class ARTextCapture: UIViewController {
     private weak var textFieldConstraint: NSLayoutConstraint!
     private weak var textField: UITextField!
     private weak var label: UILabel!
-    private weak var delegate: ARTextCaptureDelegate?
     private var currentText: String = ""
-    
+    private var completion: ((String?) -> Void)?
 }
 
 extension ARTextCapture: UITextFieldDelegate {
@@ -75,9 +76,9 @@ extension ARTextCapture: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
         
-        removeAsChildViewController()
+        completion?(textField.text)
         
-        self.delegate?.textCaptured(newString: textField.text ?? "", oldString: self.currentText)
+        removeAsChildViewController()
         
         return false
     }
@@ -227,8 +228,9 @@ extension ARTextCapture {
     
     @objc func cancel(sender : AnyObject) {
         textField.resignFirstResponder()
-        removeAsChildViewController()
         
-        self.delegate?.textCaptureCancelled()
+        completion?(nil)
+        
+        removeAsChildViewController()
     }
 }

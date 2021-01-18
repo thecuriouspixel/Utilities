@@ -92,9 +92,15 @@ class ViewController: UIViewController {
             DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
                 let textRequest = ARTextCapture()
                 textRequest.requestText(parentVC: vc,
-                                        delegate: self,
                                         titleString: "Rename",
                                         placeholderString: "Enter a new name",
+                                        completion: { (newString) in
+                                            if let newString = newString {
+                                                debugPrint("Text Captured with \(newString)")
+                                            } else {
+                                                debugPrint("Capture cancelled")
+                                            }
+                                        },
                                         currentText: "Andres",
                                         tintColor: tintColor)
             }
@@ -131,17 +137,4 @@ class ViewController: UIViewController {
             debugPrint(item)
         }
     }
-
 }
-
-extension ViewController: ARTextCaptureDelegate {
-    
-    func textCaptured(newString: String, oldString: String) {
-        debugPrint("Text Captured with \(newString) also returning old string \(oldString)")
-    }
-    
-    func textCaptureCancelled() {
-        debugPrint("Capture cancelled")
-    }
-}
-
