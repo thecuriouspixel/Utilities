@@ -28,6 +28,7 @@ class ViewController: UIViewController {
                 
                 let displayController = UIViewController()
                 displayController.view.addSubview(imageView)
+                imageView.constrain(toParent: displayController.view, atCorners: .all)
                 
                 self.present(displayController, animated: true) {
                     debugPrint("Presented image modal")
@@ -104,6 +105,29 @@ class ViewController: UIViewController {
                                         currentText: "Andres",
                                         tintColor: tintColor)
             }
+        }
+    }
+    
+    @IBAction func testSFImagePlaceholder(id: Any) {
+        
+        let config = UIImage.SymbolConfiguration(pointSize: 24, weight: .regular)
+        
+        let placeholder = SFImagePlaceholder(frame: CGRect.zero,
+                                             sfSymbolName: "square.and.arrow.up",
+                                             sfSymbolConfig: config,
+                                             sfSymbolTintColor: .white,
+                                             sfSymbolAlignment: .left,
+                                             sfSymbolMargin: 20,
+                                             gradientAlignment: .horizontal,
+                                             gradientStartColor: .blue,
+                                             gradientEndColor: .red)
+        
+        let vc = UIViewController()
+        vc.view.addSubview(placeholder)
+        placeholder.constrain(toParent: vc.view, atCorners: .all)
+        
+        self.present(vc, animated: true) {
+            debugPrint("Presented SFImagePlaceholder test")
         }
     }
 
