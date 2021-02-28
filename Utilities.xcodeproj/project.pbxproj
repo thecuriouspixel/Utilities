@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		F909F66B24A935B30041DEEC /* ARFullScreenImageViewer.swift in Sources */ = {isa = PBXBuildFile; fileRef = F909F66A24A935B30041DEEC /* ARFullScreenImageViewer.swift */; };
 		F912FD752486FCCC00C1BD4F /* UIViewController+AR.swift in Sources */ = {isa = PBXBuildFile; fileRef = F912FD742486FCCC00C1BD4F /* UIViewController+AR.swift */; };
+		F93ED5F225EBB0DD00BCB62A /* UIColor+AR.swift in Sources */ = {isa = PBXBuildFile; fileRef = F93ED5F125EBB0DD00BCB62A /* UIColor+AR.swift */; };
+		F93ED5F625EBB21A00BCB62A /* UIColor+AR.swift in Sources */ = {isa = PBXBuildFile; fileRef = F93ED5F125EBB0DD00BCB62A /* UIColor+AR.swift */; };
 		F947EE5025433DEE0047D025 /* Array+AR.swift in Sources */ = {isa = PBXBuildFile; fileRef = F947EE4F25433DEE0047D025 /* Array+AR.swift */; };
 		F9508515248BC837001903D6 /* UIImage+AR.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9508514248BC837001903D6 /* UIImage+AR.swift */; };
 		F9508517248BCAA7001903D6 /* mila.jpg in Resources */ = {isa = PBXBuildFile; fileRef = F9508516248BCAA7001903D6 /* mila.jpg */; };
@@ -49,6 +51,7 @@
 /* Begin PBXFileReference section */
 		F909F66A24A935B30041DEEC /* ARFullScreenImageViewer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARFullScreenImageViewer.swift; sourceTree = "<group>"; };
 		F912FD742486FCCC00C1BD4F /* UIViewController+AR.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIViewController+AR.swift"; path = "Utilities/Controller/UIViewController+AR.swift"; sourceTree = SOURCE_ROOT; };
+		F93ED5F125EBB0DD00BCB62A /* UIColor+AR.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+AR.swift"; sourceTree = "<group>"; };
 		F947EE4F25433DEE0047D025 /* Array+AR.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+AR.swift"; sourceTree = "<group>"; };
 		F9508514248BC837001903D6 /* UIImage+AR.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+AR.swift"; sourceTree = "<group>"; };
 		F9508516248BCAA7001903D6 /* mila.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = mila.jpg; sourceTree = "<group>"; };
@@ -114,6 +117,14 @@
 				F912FD742486FCCC00C1BD4F /* UIViewController+AR.swift */,
 			);
 			path = Controller;
+			sourceTree = "<group>";
+		};
+		F93ED5F025EBB0C300BCB62A /* Color */ = {
+			isa = PBXGroup;
+			children = (
+				F93ED5F125EBB0DD00BCB62A /* UIColor+AR.swift */,
+			);
+			path = Color;
 			sourceTree = "<group>";
 		};
 		F947EE4E25433DDC0047D025 /* Arrays */ = {
@@ -182,6 +193,7 @@
 		F9C98263247C1933003757E6 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				F93ED5F025EBB0C300BCB62A /* Color */,
 				F9A2B129255BDCB600782D8A /* Text Capture */,
 				F947EE4E25433DDC0047D025 /* Arrays */,
 				F9F66071252A589D00890349 /* UILabel */,
@@ -381,6 +393,7 @@
 				F9C98267247C1933003757E6 /* SceneDelegate.swift in Sources */,
 				F95817642520823700104228 /* UIView+AR.swift in Sources */,
 				F9847BBA25DFBA1200E830F5 /* SFImagePlaceholder.swift in Sources */,
+				F93ED5F225EBB0DD00BCB62A /* UIColor+AR.swift in Sources */,
 				F9F66073252A58AE00890349 /* UILabel+AR.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -389,6 +402,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F93ED5F625EBB21A00BCB62A /* UIColor+AR.swift in Sources */,
 				F9C9827C247C1934003757E6 /* UtilitiesTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
