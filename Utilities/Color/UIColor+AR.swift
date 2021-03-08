@@ -23,4 +23,11 @@ extension UIColor {
         
         self.init(red: red, green: green, blue: blue, alpha: alpha)
     }
+    
+    // does not do alpha
+    var hexString: String {
+        var r: CGFloat = 0, g: CGFloat = 0, b: CGFloat = 0
+        getRed(&r, green: &g, blue: &b, alpha: nil)
+        return [r, g, b].map { String(format: "%02lX", Int($0 * 255)) }.reduce("#", +)
+    }
 }

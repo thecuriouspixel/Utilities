@@ -20,16 +20,34 @@ class UtilitiesTests: XCTestCase {
     }
 
     func testHexColor() throws {
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
         var red: CGFloat = 0
         var green: CGFloat = 0
         var blue: CGFloat = 0
         var alpha: CGFloat = 0
         
-        let color = UIColor.init(hexString: "#FF0000", alpha: 1.0)
+        var color = UIColor.init(hexString: "#FF0000", alpha: 1.0)
         color.getRed(&red, green: &green, blue: &blue, alpha: &alpha)
         
         XCTAssert(red == 255.0/255.0)
+        XCTAssert(color.hexString == "#FF0000")
+        
+        color = UIColor.init(hexString: "#ff2fa9", alpha: 1.0)
+        XCTAssert(color.hexString.lowercased() == "#ff2fa9")
+        
+        color = UIColor.init(hexString: "#FF2FA9", alpha: 1.0)
+        XCTAssert(color.hexString.lowercased() == "#ff2fa9")
+        
+        color = UIColor.init(hexString: "#ffffff", alpha: 1.0)
+        XCTAssert(color.hexString.lowercased() == "#ffffff")
+        
+        color = UIColor.white
+        XCTAssert(color.hexString.lowercased() == "#ffffff")
+        
+        color = UIColor.init(hexString: "#000000", alpha: 1.0)
+        XCTAssert(color.hexString.lowercased() == "#000000")
+        
+        color = UIColor.black
+        XCTAssert(color.hexString.lowercased() == "#000000")
     }
     
     func testLoopingIterator() throws {
