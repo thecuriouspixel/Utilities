@@ -8,7 +8,7 @@
 
 import UIKit
 
-class GradientView: UIView {
+class ARGradientView: UIView {
     
     enum GradientViewAxis {
         case vertical

@@ -60,7 +60,7 @@ class ViewController: UIViewController {
             let imageview = UIImageView(image: image)
             imageview.contentMode = .scaleAspectFit
             
-            let gradienView = GradientView(frame: CGRect.zero, alignment: .vertical)
+            let gradienView = ARGradientView(frame: CGRect.zero, alignment: .vertical)
             
             let vc = UIViewController()
             
@@ -112,15 +112,42 @@ class ViewController: UIViewController {
         
         let config = UIImage.SymbolConfiguration(pointSize: 24, weight: .regular)
         
-        let placeholder = SFImagePlaceholder(frame: CGRect.zero,
-                                             sfSymbolName: "square.and.arrow.up",
+        let gradientConfig = ARImagePlaceholderGradientInfo(gradientAlignment: .horizontal,
+                                                            gradientStartColor: .blue,
+                                                            gradientEndColor: .red)
+        let placeholder = ARImagePlaceholder(frame: CGRect.zero,
+                                             imageOrSymbolName: "square.and.arrow.up",
+                                             tintColor: .white,
+                                             alignment: .left,
+                                             margin: 20,
+                                             imageToViewRatio: CGSize(width: 0.25, height: 0.25),
                                              sfSymbolConfig: config,
-                                             sfSymbolTintColor: .white,
-                                             sfSymbolAlignment: .left,
-                                             sfSymbolMargin: 20,
-                                             gradientAlignment: .horizontal,
-                                             gradientStartColor: .blue,
-                                             gradientEndColor: .red)
+                                             gradientConfig: gradientConfig
+                                             )
+        
+        let vc = UIViewController()
+        vc.view.addSubview(placeholder)
+        placeholder.constrain(toParent: vc.view, atCorners: .all)
+        
+        self.present(vc, animated: true) {
+            debugPrint("Presented SFImagePlaceholder test")
+        }
+    }
+    
+    @IBAction func testImagePlaceholderWithImage(id: Any) {
+        
+        let gradientConfig = ARImagePlaceholderGradientInfo(gradientAlignment: .horizontal,
+                                                            gradientStartColor: .blue,
+                                                            gradientEndColor: .red)
+        
+        let placeholder = ARImagePlaceholder(frame: CGRect.zero,
+                                             imageOrSymbolName: "coffee",
+                                             tintColor: .systemPink,
+                                             alignment: .right,
+                                             margin: 20,
+                                             imageToViewRatio: CGSize(width: 0.25, height: 0.25),
+                                             sfSymbolConfig: nil,
+                                             gradientConfig: gradientConfig)
         
         let vc = UIViewController()
         vc.view.addSubview(placeholder)

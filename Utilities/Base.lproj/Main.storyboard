@@ -18,10 +18,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="Bxs-ba-Ptb">
-                                <rect key="frame" x="0.0" y="16.5" width="414" height="863"/>
+                                <rect key="frame" x="0.0" y="17.5" width="414" height="861.5"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="133-fx-ab5">
-                                        <rect key="frame" x="139.5" y="0.0" width="135" height="135.5"/>
+                                        <rect key="frame" x="139.5" y="0.0" width="135" height="114.5"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
                                         <state key="normal" title="Prompt for String"/>
                                         <connections>
@@ -29,7 +29,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="8vW-h1-zjr">
-                                        <rect key="frame" x="155.5" y="145.5" width="103" height="135.5"/>
+                                        <rect key="frame" x="155.5" y="124.5" width="103" height="114.5"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
                                         <state key="normal" title="Resize Image"/>
@@ -38,7 +38,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="bLY-tk-44p">
-                                        <rect key="frame" x="109.5" y="291" width="195" height="135.5"/>
+                                        <rect key="frame" x="109.5" y="249" width="195" height="114.5"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
                                         <state key="normal" title="Full Screen Image Viewer"/>
@@ -47,7 +47,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="jB0-JC-eZJ">
-                                        <rect key="frame" x="141.5" y="436.5" width="131" height="135.5"/>
+                                        <rect key="frame" x="141.5" y="373.5" width="131" height="114.5"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
                                         <state key="normal" title="Gradient Overlay"/>
@@ -56,7 +56,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="0R7-ar-QmC">
-                                        <rect key="frame" x="157" y="582" width="100" height="135.5"/>
+                                        <rect key="frame" x="157" y="498" width="100" height="114.5"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
                                         <state key="normal" title="Text Capture"/>
@@ -65,12 +65,21 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="d0p-Hd-FDh">
-                                        <rect key="frame" x="135" y="727.5" width="144" height="135.5"/>
+                                        <rect key="frame" x="129" y="622.5" width="156" height="114.5"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
-                                        <state key="normal" title="Placeholder Image"/>
+                                        <state key="normal" title="Placeholder With SF"/>
                                         <connections>
                                             <action selector="testSFImagePlaceholderWithId:" destination="BYZ-38-t0r" eventType="touchUpInside" id="WDC-Sb-gcB"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="uG1-aT-KQH">
+                                        <rect key="frame" x="115" y="747" width="184" height="114.5"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
+                                        <state key="normal" title="Placeholder With Image"/>
+                                        <connections>
+                                            <action selector="testImagePlaceholderWithImageWithId:" destination="BYZ-38-t0r" eventType="touchUpInside" id="1ko-11-853"/>
                                         </connections>
                                     </button>
                                 </subviews>

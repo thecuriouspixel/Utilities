@@ -16,7 +16,8 @@
 		F9508517248BCAA7001903D6 /* mila.jpg in Resources */ = {isa = PBXBuildFile; fileRef = F9508516248BCAA7001903D6 /* mila.jpg */; };
 		F958174D2520807800104228 /* View+AR.swift in Sources */ = {isa = PBXBuildFile; fileRef = F958174C2520807800104228 /* View+AR.swift */; };
 		F95817642520823700104228 /* UIView+AR.swift in Sources */ = {isa = PBXBuildFile; fileRef = F95817632520823700104228 /* UIView+AR.swift */; };
-		F9847BBA25DFBA1200E830F5 /* SFImagePlaceholder.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9847BB925DFBA1200E830F5 /* SFImagePlaceholder.swift */; };
+		F9847BBA25DFBA1200E830F5 /* ARImagePlaceholder.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9847BB925DFBA1200E830F5 /* ARImagePlaceholder.swift */; };
+		F99C1B8C260C9408005CB913 /* image.png in Resources */ = {isa = PBXBuildFile; fileRef = F99C1B8B260C9408005CB913 /* image.png */; };
 		F9A2B12B255BDD8D00782D8A /* ARTextCapture.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9A2B12A255BDD8D00782D8A /* ARTextCapture.swift */; };
 		F9C98265247C1933003757E6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9C98264247C1933003757E6 /* AppDelegate.swift */; };
 		F9C98267247C1933003757E6 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9C98266247C1933003757E6 /* SceneDelegate.swift */; };
@@ -27,7 +28,7 @@
 		F9C9827C247C1934003757E6 /* UtilitiesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9C9827B247C1934003757E6 /* UtilitiesTests.swift */; };
 		F9C98287247C1934003757E6 /* UtilitiesUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9C98286247C1934003757E6 /* UtilitiesUITests.swift */; };
 		F9C98296247C19BF003757E6 /* FileManager+AR.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9C98295247C19BF003757E6 /* FileManager+AR.swift */; };
-		F9F660682529B3BF00890349 /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9F660672529B3BF00890349 /* GradientView.swift */; };
+		F9F660682529B3BF00890349 /* ARGradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9F660672529B3BF00890349 /* ARGradientView.swift */; };
 		F9F66073252A58AE00890349 /* UILabel+AR.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9F66072252A58AE00890349 /* UILabel+AR.swift */; };
 /* End PBXBuildFile section */
 
@@ -57,7 +58,8 @@
 		F9508516248BCAA7001903D6 /* mila.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = mila.jpg; sourceTree = "<group>"; };
 		F958174C2520807800104228 /* View+AR.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "View+AR.swift"; sourceTree = "<group>"; };
 		F95817632520823700104228 /* UIView+AR.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+AR.swift"; sourceTree = "<group>"; };
-		F9847BB925DFBA1200E830F5 /* SFImagePlaceholder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SFImagePlaceholder.swift; sourceTree = "<group>"; };
+		F9847BB925DFBA1200E830F5 /* ARImagePlaceholder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARImagePlaceholder.swift; sourceTree = "<group>"; };
+		F99C1B8B260C9408005CB913 /* image.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = image.png; sourceTree = "<group>"; };
 		F9A2B12A255BDD8D00782D8A /* ARTextCapture.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARTextCapture.swift; sourceTree = "<group>"; };
 		F9C98261247C1933003757E6 /* Utilities.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Utilities.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F9C98264247C1933003757E6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -74,7 +76,7 @@
 		F9C98286247C1934003757E6 /* UtilitiesUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UtilitiesUITests.swift; sourceTree = "<group>"; };
 		F9C98288247C1934003757E6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F9C98295247C19BF003757E6 /* FileManager+AR.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "FileManager+AR.swift"; sourceTree = "<group>"; };
-		F9F660672529B3BF00890349 /* GradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
+		F9F660672529B3BF00890349 /* ARGradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARGradientView.swift; sourceTree = "<group>"; };
 		F9F66072252A58AE00890349 /* UILabel+AR.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+AR.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -138,6 +140,7 @@
 		F9508513248BC815001903D6 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				F99C1B8B260C9408005CB913 /* image.png */,
 				F9508516248BCAA7001903D6 /* mila.jpg */,
 				F9508514248BC837001903D6 /* UIImage+AR.swift */,
 			);
@@ -156,8 +159,8 @@
 			isa = PBXGroup;
 			children = (
 				F95817632520823700104228 /* UIView+AR.swift */,
-				F9F660672529B3BF00890349 /* GradientView.swift */,
-				F9847BB925DFBA1200E830F5 /* SFImagePlaceholder.swift */,
+				F9F660672529B3BF00890349 /* ARGradientView.swift */,
+				F9847BB925DFBA1200E830F5 /* ARImagePlaceholder.swift */,
 			);
 			path = UIView;
 			sourceTree = "<group>";
@@ -356,6 +359,7 @@
 				F9C98271247C1933003757E6 /* LaunchScreen.storyboard in Resources */,
 				F9C9826E247C1933003757E6 /* Assets.xcassets in Resources */,
 				F9C9826C247C1933003757E6 /* Main.storyboard in Resources */,
+				F99C1B8C260C9408005CB913 /* image.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -382,7 +386,7 @@
 			files = (
 				F9508515248BC837001903D6 /* UIImage+AR.swift in Sources */,
 				F958174D2520807800104228 /* View+AR.swift in Sources */,
-				F9F660682529B3BF00890349 /* GradientView.swift in Sources */,
+				F9F660682529B3BF00890349 /* ARGradientView.swift in Sources */,
 				F9C98296247C19BF003757E6 /* FileManager+AR.swift in Sources */,
 				F9A2B12B255BDD8D00782D8A /* ARTextCapture.swift in Sources */,
 				F912FD752486FCCC00C1BD4F /* UIViewController+AR.swift in Sources */,
@@ -392,7 +396,7 @@
 				F9C98265247C1933003757E6 /* AppDelegate.swift in Sources */,
 				F9C98267247C1933003757E6 /* SceneDelegate.swift in Sources */,
 				F95817642520823700104228 /* UIView+AR.swift in Sources */,
-				F9847BBA25DFBA1200E830F5 /* SFImagePlaceholder.swift in Sources */,
+				F9847BBA25DFBA1200E830F5 /* ARImagePlaceholder.swift in Sources */,
 				F93ED5F225EBB0DD00BCB62A /* UIColor+AR.swift in Sources */,
 				F9F66073252A58AE00890349 /* UILabel+AR.swift in Sources */,
 			);
