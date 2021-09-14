@@ -27,7 +27,8 @@ extension UIColor {
     // does not do alpha
     var hexString: String {
         var r: CGFloat = 0, g: CGFloat = 0, b: CGFloat = 0
-        getRed(&r, green: &g, blue: &b, alpha: nil)
-        return [r, g, b].map { String(format: "%02lX", Int($0 * 255)) }.reduce("#", +)
+        self.getRed(&r, green: &g, blue: &b, alpha: nil)
+        // clamping due to wide color
+        return [r.clamped(0,1), g.clamped(0,1), b.clamped(0,1)].map { String(format: "%02lX", Int($0 * 255)) }.reduce("#", +)
     }
 }
