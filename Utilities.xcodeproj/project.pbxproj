@@ -18,6 +18,7 @@
 		F95817642520823700104228 /* UIView+AR.swift in Sources */ = {isa = PBXBuildFile; fileRef = F95817632520823700104228 /* UIView+AR.swift */; };
 		F95C30782704C80600FD4DC3 /* Comparable+AR.swift in Sources */ = {isa = PBXBuildFile; fileRef = F95C30772704C80600FD4DC3 /* Comparable+AR.swift */; };
 		F9847BBA25DFBA1200E830F5 /* ARImagePlaceholder.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9847BB925DFBA1200E830F5 /* ARImagePlaceholder.swift */; };
+		F99CB805275943EB004705D0 /* UIButton+AR.swift in Sources */ = {isa = PBXBuildFile; fileRef = F99CB804275943EB004705D0 /* UIButton+AR.swift */; };
 		F9A2B12B255BDD8D00782D8A /* ARTextCapture.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9A2B12A255BDD8D00782D8A /* ARTextCapture.swift */; };
 		F9C98265247C1933003757E6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9C98264247C1933003757E6 /* AppDelegate.swift */; };
 		F9C98267247C1933003757E6 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9C98266247C1933003757E6 /* SceneDelegate.swift */; };
@@ -60,6 +61,7 @@
 		F95817632520823700104228 /* UIView+AR.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+AR.swift"; sourceTree = "<group>"; };
 		F95C30772704C80600FD4DC3 /* Comparable+AR.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Comparable+AR.swift"; sourceTree = "<group>"; };
 		F9847BB925DFBA1200E830F5 /* ARImagePlaceholder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARImagePlaceholder.swift; sourceTree = "<group>"; };
+		F99CB804275943EB004705D0 /* UIButton+AR.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIButton+AR.swift"; sourceTree = "<group>"; };
 		F9A2B12A255BDD8D00782D8A /* ARTextCapture.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARTextCapture.swift; sourceTree = "<group>"; };
 		F9C98261247C1933003757E6 /* Utilities.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Utilities.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F9C98264247C1933003757E6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -172,6 +174,14 @@
 			path = Comparable;
 			sourceTree = "<group>";
 		};
+		F99CB803275943EB004705D0 /* UIButton */ = {
+			isa = PBXGroup;
+			children = (
+				F99CB804275943EB004705D0 /* UIButton+AR.swift */,
+			);
+			path = UIButton;
+			sourceTree = "<group>";
+		};
 		F9A2B129255BDCB600782D8A /* Text Capture */ = {
 			isa = PBXGroup;
 			children = (
@@ -203,6 +213,7 @@
 		F9C98263247C1933003757E6 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				F99CB803275943EB004705D0 /* UIButton */,
 				F95C30762704C80600FD4DC3 /* Comparable */,
 				F93ED5F025EBB0C300BCB62A /* Color */,
 				F9A2B129255BDCB600782D8A /* Text Capture */,
@@ -322,7 +333,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1140;
-				LastUpgradeCheck = 1140;
+				LastUpgradeCheck = 1310;
 				ORGANIZATIONNAME = "The Curious Pixel";
 				TargetAttributes = {
 					F9C98260247C1933003757E6 = {
@@ -400,6 +411,7 @@
 				F912FD752486FCCC00C1BD4F /* UIViewController+AR.swift in Sources */,
 				F9C98269247C1933003757E6 /* ViewController.swift in Sources */,
 				F947EE5025433DEE0047D025 /* Array+AR.swift in Sources */,
+				F99CB805275943EB004705D0 /* UIButton+AR.swift in Sources */,
 				F909F66B24A935B30041DEEC /* ARFullScreenImageViewer.swift in Sources */,
 				F9C98265247C1933003757E6 /* AppDelegate.swift in Sources */,
 				F9C98267247C1933003757E6 /* SceneDelegate.swift in Sources */,
@@ -488,6 +500,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -548,6 +561,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;

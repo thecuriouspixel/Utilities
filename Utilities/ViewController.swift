@@ -157,9 +157,41 @@ class ViewController: UIViewController {
             debugPrint("Presented SFImagePlaceholder test")
         }
     }
+    
+    @IBAction func testButtonWithImage(id: Any) {
+        
+        let config = UIImage.SymbolConfiguration(pointSize: 24, weight: .regular)
+        
+        if let sfImage = UIImage.sfImage(named: "gamecontroller", config: config, withTintColor: .red) {
+            
+            let button = UIButton(frame: CGRect(x:0,y:0,width:100,height:100))
+            button.setTitle("Title", for: .normal)
+            button.backgroundColor = .black
+            button.set(withImage: sfImage, action: #selector(self.genericSelector), tintColor: .gray, target: self)
+            
+            let vc = UIViewController()
+            vc.view.backgroundColor = .lightGray
+            vc.view.addSubview(button)
+            
+            button.centerYAnchor.constraint(equalTo: vc.view.centerYAnchor).isActive = true
+            button.centerXAnchor.constraint(equalTo: vc.view.centerXAnchor).isActive = true
+            button.translatesAutoresizingMaskIntoConstraints = false
+            
+            button.setInsets(forContentPadding: UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10),
+                             imageTitlePadding: 10)
+            
+            self.present(vc, animated: true) {
+                debugPrint("Presented Button With Image test")
+            }
+        }
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
+    }
+    
+    @objc func genericSelector() {
+        debugPrint("Selector called")
     }
 
 }
