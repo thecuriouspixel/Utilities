@@ -2,8 +2,7 @@
 //  UIImage+AR.swift
 //  Utilities
 //
-//  Created by Jose A Ramirez on 06/06/2020.
-//  Copyright © 2020 The Curious Pixel. All rights reserved.
+//  Copyright © 2021 The Curious Pixel. All rights reserved.
 //
 
 import Foundation

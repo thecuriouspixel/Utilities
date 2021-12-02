@@ -2,8 +2,7 @@
 //  NSFileManager+AR.swift
 //  VisualTasks
 //
-//  Created by Jose A Ramirez on 9/7/19.
-//  Copyright © 2019 Jose A Ramirez. All rights reserved.
+//  Copyright © 2021 Jose A Ramirez. All rights reserved.
 //
 
 import Foundation
