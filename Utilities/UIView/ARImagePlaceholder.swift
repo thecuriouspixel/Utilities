@@ -39,7 +39,7 @@ class ARImagePlaceholder: UIView {
                                           alignment: gradientConfig.gradientAlignment,
                                           startColor: gradientConfig.gradientStartColor,
                                           endColor: gradientConfig.gradientEndColor)
-            self.addSubview(gradientView)
+            
             gradientView.constrain(toParent: self, atCorners: .all)
         }
         

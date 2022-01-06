@@ -129,7 +129,6 @@ extension ARTextCapture {
     
     private func addVisualEffectView() {
         let newView = UIVisualEffectView(effect: UIBlurEffect(style: .dark))
-        view.addSubview(newView)
         newView.constrain(toParent: self.view, atCorners: .all)
         
         let tapRecognizer = UITapGestureRecognizer(target: self, action: #selector(cancel(sender:)))

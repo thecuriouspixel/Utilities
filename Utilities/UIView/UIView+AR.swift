@@ -37,6 +37,10 @@ extension UIView {
     
     func constrain(toParent parent: UIView, atCorners edges: UIRectEdge, hMargin: CGFloat = 0, vMargin: CGFloat = 0) {
         
+        if !parent.subviews.contains(self) {
+            parent.addSubview(self)
+        }
+        
         if edges.contains(.all) {
             self.topAnchor.constraint(equalTo: parent.topAnchor,
                                       constant: vMargin).isActive = true

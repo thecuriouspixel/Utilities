@@ -26,7 +26,7 @@ class ViewController: UIViewController {
                 imageView.contentMode = .scaleAspectFit
                 
                 let displayController = UIViewController()
-                displayController.view.addSubview(imageView)
+                
                 imageView.constrain(toParent: displayController.view, atCorners: .all)
                 
                 self.present(displayController, animated: true) {
@@ -63,10 +63,8 @@ class ViewController: UIViewController {
             
             let vc = UIViewController()
             
-            vc.view.addSubview(imageview)
             imageview.constrain(toParent: vc.view, atCorners: .all)
             
-            vc.view.addSubview(gradienView)
             gradienView.constrain(toParent: vc.view, atCorners: .all)
             
             self.present(vc, animated: true) {
@@ -83,8 +81,6 @@ class ViewController: UIViewController {
         
         let imageView = UIImageView(image: UIImage(named: "mila.jpg"))
         imageView.contentMode = .scaleAspectFill
-        
-        vc.view.addSubview(imageView)
         imageView.constrain(toParent: vc.view, atCorners: .all)
         
         self.present(vc, animated: true) {
@@ -125,7 +121,6 @@ class ViewController: UIViewController {
                                              )
         
         let vc = UIViewController()
-        vc.view.addSubview(placeholder)
         placeholder.constrain(toParent: vc.view, atCorners: .all)
         
         self.present(vc, animated: true) {
@@ -149,7 +144,6 @@ class ViewController: UIViewController {
                                              gradientConfig: gradientConfig)
         
         let vc = UIViewController()
-        vc.view.addSubview(placeholder)
         placeholder.constrain(toParent: vc.view, atCorners: .all)
         
         self.present(vc, animated: true) {
