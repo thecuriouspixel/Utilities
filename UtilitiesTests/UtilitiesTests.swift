@@ -66,6 +66,30 @@ class UtilitiesTests: XCTestCase {
         let tenItems = iterator.prefix(10)
         XCTAssert(Set(tenItems) == Set(expectedNext))
     }
+    
+    func testArrayItemsFromRandom() throws {
+        
+        let array = [1,2,3,4,5,6,7,8,9,10]
+        let arraySet = Set(array) // easier to check subset
+        
+        let askForTooMuch = array.itemsFromRandom(11)
+        XCTAssert(askForTooMuch.elementsEqual(array))
+        
+        let askFor5 = array.itemsFromRandom(5)
+        XCTAssert(askFor5.count == 5)
+        XCTAssert(Set(askFor5).isSubset(of: arraySet))
+        
+        let askForAnother5 = array.itemsFromRandom(5)
+        XCTAssert(askForAnother5.count == 5)
+        XCTAssert(Set(askForAnother5).isSubset(of: arraySet))
+        
+        // this could fail
+        XCTAssertFalse(askFor5.elementsEqual(askForAnother5))
+        
+        let askForZero = array.itemsFromRandom(0)
+        XCTAssert(askForZero.count == 0)
+        
+    }
 
     func testPerformanceExample() throws {
         // This is an example of a performance test case.

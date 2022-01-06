@@ -27,4 +27,15 @@ extension Array {
             return result
         })
     }
+    
+    func itemsFromRandom(_ limit: Int) -> ArraySlice<Element> {
+        
+        guard limit < self.count else {
+            return self[0..<self.count] // need to force an ArraySlice
+        }
+        
+        let maxStart = self.count - limit
+        let randomStart = Int.random(in: 0..<maxStart)
+        return self[randomStart..<(randomStart+limit)]
+    }
 }
