@@ -1,3 +1,4 @@
 .DS_Store
 *.xcworkspace
 *xcdebugger
+/Utilities.xcodeproj/project.xcworkspace/xcuserdata/jaramire.xcuserdatad/UserInterfaceState.xcuserstate
