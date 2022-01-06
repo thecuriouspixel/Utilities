@@ -37,7 +37,7 @@ extension UIView {
     
     func constrain(toParent parent: UIView, atCorners edges: UIRectEdge, hMargin: CGFloat = 0, vMargin: CGFloat = 0) {
         
-        if !parent.subviews.contains(self) {
+        if !parent.subviews.contains(self) && self.superview == nil {
             parent.addSubview(self)
         }
         
