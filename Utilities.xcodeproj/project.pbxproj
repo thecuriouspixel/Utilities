@@ -31,6 +31,7 @@
 		F9C98296247C19BF003757E6 /* FileManager+AR.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9C98295247C19BF003757E6 /* FileManager+AR.swift */; };
 		F9F660682529B3BF00890349 /* ARGradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9F660672529B3BF00890349 /* ARGradientView.swift */; };
 		F9F66073252A58AE00890349 /* UILabel+AR.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9F66072252A58AE00890349 /* UILabel+AR.swift */; };
+		F9F8343327870BDB00C4871D /* Comparable+AR.swift in Sources */ = {isa = PBXBuildFile; fileRef = F95C30772704C80600FD4DC3 /* Comparable+AR.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -428,6 +429,7 @@
 			files = (
 				F93ED5F625EBB21A00BCB62A /* UIColor+AR.swift in Sources */,
 				F9C9827C247C1934003757E6 /* UtilitiesTests.swift in Sources */,
+				F9F8343327870BDB00C4871D /* Comparable+AR.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
