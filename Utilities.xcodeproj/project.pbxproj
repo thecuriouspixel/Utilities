@@ -32,6 +32,7 @@
 		F9F660682529B3BF00890349 /* ARGradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9F660672529B3BF00890349 /* ARGradientView.swift */; };
 		F9F66073252A58AE00890349 /* UILabel+AR.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9F66072252A58AE00890349 /* UILabel+AR.swift */; };
 		F9F8343327870BDB00C4871D /* Comparable+AR.swift in Sources */ = {isa = PBXBuildFile; fileRef = F95C30772704C80600FD4DC3 /* Comparable+AR.swift */; };
+		F9F83466278C433D00C4871D /* SceneDelegate+AR.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9F83465278C433D00C4871D /* SceneDelegate+AR.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -81,6 +82,7 @@
 		F9C98295247C19BF003757E6 /* FileManager+AR.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "FileManager+AR.swift"; sourceTree = "<group>"; };
 		F9F660672529B3BF00890349 /* ARGradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARGradientView.swift; sourceTree = "<group>"; };
 		F9F66072252A58AE00890349 /* UILabel+AR.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+AR.swift"; sourceTree = "<group>"; };
+		F9F83465278C433D00C4871D /* SceneDelegate+AR.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SceneDelegate+AR.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -214,6 +216,7 @@
 		F9C98263247C1933003757E6 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				F9F83464278C433D00C4871D /* SceneDelegate */,
 				F99CB803275943EB004705D0 /* UIButton */,
 				F95C30762704C80600FD4DC3 /* Comparable */,
 				F93ED5F025EBB0C300BCB62A /* Color */,
@@ -269,6 +272,14 @@
 				F9F66072252A58AE00890349 /* UILabel+AR.swift */,
 			);
 			path = UILabel;
+			sourceTree = "<group>";
+		};
+		F9F83464278C433D00C4871D /* SceneDelegate */ = {
+			isa = PBXGroup;
+			children = (
+				F9F83465278C433D00C4871D /* SceneDelegate+AR.swift */,
+			);
+			path = SceneDelegate;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -419,6 +430,7 @@
 				F95817642520823700104228 /* UIView+AR.swift in Sources */,
 				F9847BBA25DFBA1200E830F5 /* ARImagePlaceholder.swift in Sources */,
 				F93ED5F225EBB0DD00BCB62A /* UIColor+AR.swift in Sources */,
+				F9F83466278C433D00C4871D /* SceneDelegate+AR.swift in Sources */,
 				F9F66073252A58AE00890349 /* UILabel+AR.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
