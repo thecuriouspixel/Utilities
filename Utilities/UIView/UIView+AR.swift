@@ -71,6 +71,13 @@ extension UIView {
         translatesAutoresizingMaskIntoConstraints = false
     }
     
+    func center(inView masterView: UIView, offsetX: CGFloat = 0, offsetY: CGFloat = 0) {
+        centerYAnchor.constraint(equalTo: masterView.centerYAnchor, constant: offsetY).isActive = true
+        centerXAnchor.constraint(equalTo: masterView.centerXAnchor, constant: offsetX).isActive = true
+        
+        translatesAutoresizingMaskIntoConstraints = false
+    }
+    
     static func generate(ofSize size: CGSize, withImage image: UIImage, imageScale: CGFloat, alignment: Alignment, backgroundColor: UIColor) -> UIView {
         
         let baseView = UIView(frame: CGRect(x: 0, y: 0, width: size.width, height: size.height))
